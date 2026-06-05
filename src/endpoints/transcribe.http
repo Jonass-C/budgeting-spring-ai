@@ -1,0 +1,10 @@
+### POST request to example server
+POST http://localhost:8080/api/transcribe
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="recording.mp3"
+Content-Type: audio/mpeg
+
+< ../test/resources/audio/recording.mp3
+--WebAppBoundary--

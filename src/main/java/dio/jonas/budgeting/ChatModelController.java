@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class ChatModelController {
-    private final ChatModel geminiChatModel;
+    private final ChatModel chatModel;
 
-    public ChatModelController(ChatModel geminiChatModel) {
-        this.geminiChatModel = geminiChatModel;
+    public ChatModelController(ChatModel chatModel) {
+        this.chatModel = chatModel;
     }
 
     @GetMapping("/chat-model")
-    String chat(String prompt) {
-        return this.geminiChatModel.call(prompt);
+    public String chat(String prompt) {
+        return this.chatModel.call(prompt);
     }
 }

@@ -22,6 +22,7 @@ extra["springAiVersion"] = "2.0.0-M8"
 dependencies {
 	implementation("org.springframework.ai:spring-ai-starter-model-google-genai")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.projectlombok:lombok:1.18.46")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

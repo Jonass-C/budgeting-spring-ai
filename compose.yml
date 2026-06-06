@@ -1,0 +1,20 @@
+services:
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASS}
+      MYSQL_USER: ${MYSQL_DB_USER}
+      MYSQL_PASSWORD: ${MYSQL_DB_PASS}
+    ports:
+      - "3307:3306"
+    volumes:
+      - transaction_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u${MYSQL_DB_USER}", "-p${MYSQL_DB_PASS}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  transaction_data:

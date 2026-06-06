@@ -1,0 +1,10 @@
+### POST request to example server
+POST http://localhost:8080/transactions/ai
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="recording.mp3"
+Content-Type: audio/mpeg
+
+< ../test/resources/audio/recording2.mp3
+--WebAppBoundary--

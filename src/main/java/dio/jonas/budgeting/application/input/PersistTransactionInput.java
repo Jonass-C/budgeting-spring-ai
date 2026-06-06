@@ -1,9 +1,10 @@
 package dio.jonas.budgeting.application.input;
 
 import dio.jonas.budgeting.domain.Category;
+import org.springframework.ai.tool.annotation.ToolParam;
 
 public record PersistTransactionInput(
-        String description,
-        long amount,
-        Category category) {
+        @ToolParam(description = "Descrição do gasto") String description,
+        @ToolParam(description = "Valor do gasto (em centavos)") long amount,
+        @ToolParam(description = "Categoria de uma transação") Category category) {
 }

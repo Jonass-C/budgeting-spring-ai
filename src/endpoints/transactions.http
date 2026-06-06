@@ -1,0 +1,9 @@
+### POST request to example server
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "description": "Compra na padaria",
+  "category": "GROCERIES",
+  "amount": 12530
+}
